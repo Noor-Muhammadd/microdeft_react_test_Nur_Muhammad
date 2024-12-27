@@ -16,7 +16,7 @@ const CreateCourse = () => {
     const token = localStorage.getItem('authToken'); 
 
     if (!token) {
-      alert('Unauthorized: Please login first.');
+      toast.error('Unauthorized: Please login first.');
       return;
     }
 

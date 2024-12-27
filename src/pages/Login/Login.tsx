@@ -8,9 +8,16 @@ const Login = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+
+  // Pre-fill credentials function
+  const fillCredentials = () => {
+    setValue('email', 'bill2@gmail.com');
+    setValue('password', '12345678');
+  };
 
   const onSubmit = async (data) => {
     try {
@@ -21,8 +28,8 @@ const Login = () => {
       const { token } = response.data.data;
       localStorage.setItem('authToken', token);
       toast.success('Login successful!');
-      window.location.reload();
       navigate('/');
+      window.location.reload();
     } catch (error) {
       toast.error('Login failed. Please check your credentials and try again.');
       console.error(error);
@@ -55,7 +62,7 @@ const Login = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
             />
             {errors.email && (
-              <p className="text-red-600 text-sm mt-1">{errors.email?.message as string}</p>
+              <p className="text-red-600 text-sm mt-1">{errors.email?.message}</p>
             )}
           </div>
           <div className="mb-6">
@@ -79,7 +86,7 @@ const Login = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
             />
             {errors.password && (
-              <p className="text-red-600 text-sm mt-1">{errors.password?.message as string}</p>
+              <p className="text-red-600 text-sm mt-1">{errors.password?.message}</p>
             )}
           </div>
           <button
@@ -89,6 +96,14 @@ const Login = () => {
             Login
           </button>
         </form>
+
+        {/* Button to pre-fill credentials */}
+        <button
+          onClick={fillCredentials}
+          className="w-full mt-4 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300"
+        >
+          Use Demo Credentials
+        </button>
       </div>
     </div>
   );

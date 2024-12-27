@@ -19,16 +19,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 text-white py-4 shadow-md">
+    <nav className="bg-[#183A91] text-[#fff] py-4 shadow-md">
       <div className="container mx-auto flex items-center justify-between px-4">
         <Link to="/" className="text-2xl font-bold hover:text-blue-200">
-          Courses
+        MicroDeft 
         </Link>
         <ul className="flex items-center space-x-4">
           <li>
             <Link
               to="/course"
-              className="hover:bg-blue-700 py-2 px-4 rounded transition"
+              className="hover:bg-[#94B3F5] py-2 px-4 rounded transition"
             >
               Create Course
             </Link>
@@ -38,7 +38,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/register"
-                  className="hover:bg-blue-700 py-2 px-4 rounded transition"
+                  className="hover:bg-[#94B3F5] py-2 px-4 rounded transition"
                 >
                   Register
                 </Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/login"
-                  className="hover:bg-blue-700 py-2 px-4 rounded transition"
+                  className="hover:bg-[#94B3F5] py-2 px-4 rounded transition"
                 >
                   Login
                 </Link>

@@ -21,6 +21,7 @@ const Login = () => {
       const { token } = response.data.data;
       localStorage.setItem('authToken', token);
       toast.success('Login successful!');
+      window.location.reload();
       navigate('/');
     } catch (error) {
       toast.error('Login failed. Please check your credentials and try again.');

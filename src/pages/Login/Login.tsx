@@ -62,7 +62,7 @@ const Login = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
             />
             {errors.email && (
-              <p className="text-red-600 text-sm mt-1">{errors.email?.message}</p>
+              <p className="text-red-600 text-sm mt-1">{errors.email?.message as string}</p>
             )}
           </div>
           <div className="mb-6">
@@ -86,7 +86,7 @@ const Login = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
             />
             {errors.password && (
-              <p className="text-red-600 text-sm mt-1">{errors.password?.message}</p>
+              <p className="text-red-600 text-sm mt-1">{errors.password?.message as string}</p>
             )}
           </div>
           <button
